@@ -2,3 +2,4 @@
 env/
 envname/
 config/settings.yml
+geckodriver.log
