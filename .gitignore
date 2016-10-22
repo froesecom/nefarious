@@ -3,6 +3,7 @@ env/
 envname/
 output/
 config/settings.yml
+config/input_data.csv
 geckodriver.log
 *.swp
 *.log
