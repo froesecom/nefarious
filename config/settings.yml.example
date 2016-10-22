@@ -1,0 +1,5 @@
+baseurl: "http://example.com"
+input:
+  id: "element_id"
+sample_input:
+  - "search text" 

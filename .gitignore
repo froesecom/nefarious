@@ -1,6 +1,7 @@
 # Distribution and packaging
 env/
 envname/
+output/
 config/settings.yml
 geckodriver.log
 *.swp
