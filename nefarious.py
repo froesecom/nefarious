@@ -10,6 +10,7 @@ settings = yaml.load(stream)
 
 baseurl = settings["baseurl"]
 driver = webdriver.Chrome("/Library/drivers/chromedriver")
+driver.get(baseurl)
 
 print "opening csv..."
 with open("config/input_data_test.csv", "rU") as csvfile:
@@ -19,11 +20,11 @@ with open("config/input_data_test.csv", "rU") as csvfile:
      
     #pdb.set_trace()
     for instruction in settings['actions']:
-      print("hello?")
-      #if key == "input":
-     #   el = driver.find_element_by_id() 
+      for key, value in instruction.items():
+        if key == "input":
+          el = driver.find_element_by_id(value["id"])
+          el.send_keys(row[value["row_header"]])
         
 
-#driver.get(baseurl)
 #el = driver.find_element_by_id(el_id)
 #print   .get_attribute("name")
