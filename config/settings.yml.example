@@ -1,5 +1,9 @@
-baseurl: "http://example.com"
-input:
-  id: "element_id"
-sample_input:
-  - "search text" 
+baseurl: "www.example.com"
+actions:
+  - input:
+      id: "el_id"
+      row_header: "header_name" 
+  - click:
+      id: "el_id"
+  - wait:
+      id: "el_id"
