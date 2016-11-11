@@ -4,6 +4,7 @@ envname/
 output/
 config/settings.yml
 config/input_data.csv
+config/input_data_test.csv
 geckodriver.log
 *.swp
 *.log
