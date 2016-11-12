@@ -5,6 +5,7 @@ import yaml
 import csv
 import pdb
 
+#setup selenium and instructions
 print "just imported selenium"
 stream   = file("config/instructions.yml", "r")
 settings = yaml.load(stream)
@@ -14,15 +15,21 @@ driver = webdriver.Chrome("/Library/drivers/chromedriver")
 wait = ui.WebDriverWait(driver,10)
 driver.get(baseurl)
 
+#temporarily store functions here until refactor
+def writeFailure(row):
+  print("FAIL!")
+
+
+#read instructions
 print "opening csv..."
 with open("config/input_data_test.csv", "rU") as csvfile:
   reader = csv.DictReader(csvfile)
   for row in reader:
-     
-    #pdb.set_trace()
-    for instruction in settings['actions']:
-      for key, value in instruction.items():
-        print(driver.title)
+    try: 
+      #pdb.set_trace()
+      for instruction in settings['actions']:
+        for key, value in instruction.items():
+          print(driver.title)
         if key == "input":
           el = driver.find_element_by_id(value["id"])
           el.send_keys(row[value["row_header"]])
@@ -39,4 +46,7 @@ with open("config/input_data_test.csv", "rU") as csvfile:
           driver.switch_to_window(driver.window_handles[1])
         elif key == "read":
           print(driver.find_element_by_id(value["id"]).text)
+    except:
+      writeFailure(row)
+      pass
 #driver.quit()
