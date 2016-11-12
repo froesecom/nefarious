@@ -2,7 +2,7 @@
 env/
 envname/
 output/
-config/settings.yml
+config/instructions.yml
 config/input_data.csv
 config/input_data_test.csv
 geckodriver.log

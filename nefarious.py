@@ -37,6 +37,6 @@ with open("config/input_data_test.csv", "rU") as csvfile:
           el.find_elements_by_tag_name(value["tag"])[0].click()
         elif key == "switch_window":
           driver.switch_to_window(driver.window_handles[1])
-          #driver.switch_to_window(value["target"])
-
+        elif key == "read":
+          print(driver.find_element_by_id(value["id"]).text)
 #driver.quit()

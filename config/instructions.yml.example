@@ -12,3 +12,5 @@ actions:
       tag: "a"
   - switch_window:
       index: 1
+  - read:
+      id: "el_id"
