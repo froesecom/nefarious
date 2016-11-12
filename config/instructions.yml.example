@@ -10,3 +10,5 @@ actions:
   - click_child:
       id: "el_id"
       tag: "a"
+  - switch_window:
+      index: 1

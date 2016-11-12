@@ -31,9 +31,12 @@ with open("config/input_data_test.csv", "rU") as csvfile:
           el.click()
         elif key == "wait":
           wait.until(lambda driver: driver.find_element_by_id(value['id']))
+          print("wait is over")
         elif key == "click_child":
           el = driver.find_element_by_id(value["id"])
           el.find_elements_by_tag_name(value["tag"])[0].click()
-          print("Word is born")
+        elif key == "switch_window":
+          driver.switch_to_window(driver.window_handles[1])
+          #driver.switch_to_window(value["target"])
 
-driver.quit()
+#driver.quit()

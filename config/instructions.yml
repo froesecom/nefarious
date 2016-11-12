@@ -10,3 +10,7 @@ actions:
   - click_child:
       id: "ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_ctl12_ctl00__0"
       tag: "a"
+  - switch_window:
+      index: 1
+  - wait:
+      id: "ctl00_ContentPanel"
