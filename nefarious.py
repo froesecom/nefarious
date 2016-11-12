@@ -18,7 +18,6 @@ print "opening csv..."
 with open("config/input_data_test.csv", "rU") as csvfile:
   reader = csv.DictReader(csvfile)
   for row in reader:
-    print(row["ABN"]) #row header is ABN in this case
      
     #pdb.set_trace()
     for instruction in settings['actions']:
@@ -32,7 +31,9 @@ with open("config/input_data_test.csv", "rU") as csvfile:
           el.click()
         elif key == "wait":
           wait.until(lambda driver: driver.find_element_by_id(value['id']))
-          print("found it")
+        elif key == "click_child":
+          el = driver.find_element_by_id(value["id"])
+          el.find_elements_by_tag_name(value["tag"])[0].click()
+          print("Word is born")
 
-#el = driver.find_element_by_id(el_id)
-#print   .get_attribute("name")
+driver.quit()

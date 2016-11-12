@@ -7,3 +7,6 @@ actions:
       id: "el_id"
   - wait:
       id: "el_id"
+  - click_child:
+      id: "el_id"
+      tag: "a"
