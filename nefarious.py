@@ -6,7 +6,7 @@ import csv
 import pdb
 
 print "just imported selenium"
-stream   = file("config/settings.yml", "r")
+stream   = file("config/instructions.yml", "r")
 settings = yaml.load(stream)
 
 baseurl = settings["baseurl"]
